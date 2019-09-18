@@ -22,12 +22,23 @@ public class Specialist {
     @OneToMany(mappedBy = "specialist")
     private Set<Costumer> costumers = new HashSet<>();
 
+    @OneToMany(mappedBy = "specialist")
+    private Set<ServiceTime> serviceTimes = new HashSet<>();
+
     public Specialist() {
     }
 
     public Specialist(String name, String surname) {
         this.name = name;
         this.surname = surname;
+    }
+
+    public Set<ServiceTime> getServiceTimes() {
+        return serviceTimes;
+    }
+
+    public void setServiceTimes(Set<ServiceTime> serviceTimes) {
+        this.serviceTimes = serviceTimes;
     }
 
     public Integer getId() {
