@@ -20,6 +20,12 @@ public class CostumerDaoImpl implements CostumerDAO{
     }
     @Transactional
     @Override
+    public List<Costumer> getCostumerList(int limit) {
+       return sessionFactory.getCurrentSession().createQuery("from Costumer").setMaxResults(limit).list();
+    }
+
+    @Transactional
+    @Override
     public Costumer getCostumerById(Integer id) {
         return sessionFactory.getCurrentSession().get(Costumer.class, id);
     }

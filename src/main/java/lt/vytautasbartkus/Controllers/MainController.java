@@ -24,12 +24,8 @@ public class MainController {
     private ServiceTimeDAO serviceTimeDAO;
 
     @GetMapping(value = "/")
-    public String test(){
-        ServiceTime serviceTime = serviceTimeDAO.getServiceTimeById(1);
-        long difference = serviceTime.getTimeFinished().getTime() - serviceTime.getTimeStarted().getTime();
-        System.out.println((new SimpleDateFormat("hh:mm:ss")).format(new Date(difference)));
+    public String home(){
 
-
-        return "test.jsp";
+        return "home.jsp";
     }
 }

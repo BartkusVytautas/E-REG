@@ -21,6 +21,12 @@ public class ServiceTimeDAOImpl implements ServiceTimeDAO{
     }
     @Transactional
     @Override
+    public List<ServiceTime> getServiceTimeList(int limit) {
+        return sessionFactory.getCurrentSession().createQuery("from ServiceTime").setMaxResults(limit).list();
+    }
+
+    @Transactional
+    @Override
     public ServiceTime getServiceTimeById(Integer id) {
         return sessionFactory.getCurrentSession().get(ServiceTime.class, id);
     }

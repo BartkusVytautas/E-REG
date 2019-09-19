@@ -18,7 +18,7 @@ public class Costumer {
     private String surname;
 
     @Column (name = "is_serviced")
-    private boolean isServiced;
+    private boolean isServiced = false;
 
     @ManyToOne
     @JoinColumn(name = "specialist_id", nullable = true)

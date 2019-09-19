@@ -72,5 +72,9 @@ public class ServiceTime {
         this.timeFinished = timeFinished;
     }
 
+    public long timeElapsedInMills(){
+        return (this.timeFinished.getTime() - this.timeStarted.getTime());
+    }
+
 
 }
